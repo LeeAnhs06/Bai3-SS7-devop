@@ -1,0 +1,12 @@
+[Unit]
+Description=Spring Boot App (session07 ex3)
+After=network.target mysql.service
+
+[Service]
+User=spring-runner
+ExecStart=/usr/bin/java -jar /opt/spring-app/app.jar
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
